@@ -43,7 +43,7 @@ Os diretórios `classificacao_binaria_tratada/` e `classificacao_multiclasse_tra
 
 ## Resultados & Comparações
 
-As tabelas abaixo resumem os resultados atuais salvos em `classificacao_binaria_tratada/` e `classificacao_multiclasse_tratada/` (29/09/2026). Os valores vêm dos arquivos JSON persistidos; os notebooks não foram executados novamente para esta documentação.
+As tabelas abaixo resumem os resultados atuais salvos em `classificacao_binaria_tratada/` e `classificacao_multiclasse_tratada/` (28/10/26).
 
 ### Classificação binária
 
