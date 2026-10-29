@@ -29,7 +29,11 @@ Cada etapa mantém seus resultados atuais em pastas estáveis. Uma nova execuç�
 
 O dataset de referência está disponível no [Figshare](https://figshare.com/articles/dataset/Unmanned_Aerial_Vehicles-Network_Intrusion_Detection_Dataset/25486462). Os detalhes de uso, dependências, comandos e limitações estão nos READMEs de cada projeto.
 
-Antes de publicar o repositório, confira a licença e os termos de redistribuição do dataset e considere o tamanho dos arquivos de dados e dos checkpoints de modelos.
+**Citação do dataset:** Hadi, H. J. (2025). *Unmanned Aerial Vehicles-Network Intrusion Detection Dataset* (v2) [Dataset]. Figshare. https://doi.org/10.6084/m9.figshare.25486462.v2.
+
+O dataset está disponível sob a licença [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). O arquivo `Normal+Attacks.csv` é proveniente desse dataset. Ao reutilizar ou redistribuir o conjunto, mantenha a atribuição acima e indique alterações feitas. O código e os notebooks desenvolvidos para este projeto estão sob a licença [MIT](LICENSE); essa licença não se aplica ao dataset.
+
+Os resultados e as ressalvas sobre a comparação com o artigo associado ao dataset estão em [deep-learning-redes/README.md](deep-learning-redes/README.md#comparação-com-o-artigo-de-referência).
 
 ## Autoria
 

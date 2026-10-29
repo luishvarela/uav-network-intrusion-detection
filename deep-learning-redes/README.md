@@ -12,7 +12,7 @@ Este diretório reúne modelos de **Deep Learning** para classificar tráfego de
 
 O conjunto de dados de referência está disponível no [Figshare](https://figshare.com/articles/dataset/Unmanned_Aerial_Vehicles-Network_Intrusion_Detection_Dataset/25486462). A cópia usada no projeto está em `Normal+Attacks.csv`; as linhas representam fluxos de rede descritos por atributos estatísticos, e a coluna de rótulo indica a classe do fluxo.
 
-O dataset contém nove rótulos de ataque e o estado `Normal`. Os nomes abaixo refletem os rótulos usados na documentação e nos artefatos do projeto. Nos resultados salvos aparecem `Evil` e `Reply`; mantive esses nomes para corresponder aos dados, embora a descrição de `Evil` seja apresentada como Evil Twin e `Reply` possa exigir confirmação de nomenclatura na fonte original.
+O dataset contém nove rótulos de ataque e o estado `Normal`. Os rótulos do CSV são preservados nos experimentos; `Evil` corresponde ao cenário Evil Twin descrito na fonte, enquanto `Reply` é mantido com o nome original do arquivo, sem renomeação.
 
 | Ataque | Descrição Técnica |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ O dataset contém nove rótulos de ataque e o estado `Normal`. Os nomes abaixo r
 | **`FakeLanding`** | Envio de pacotes ou dados de telemetria falsificados para induzir o drone a realizar um pouso forçado ou incorreto em local não planejado. |
 | **`MITM`** | *Man-in-the-Middle*: Interceptação e potencial alteração das mensagens trocadas entre o drone e a estação de controle em solo. |
 | **`Reco`** | Fase de reconhecimento e coleta de informações passivas ou ativas sobre o drone e sua infraestrutura de rede. |
-| **`Reply`** | Rótulo presente no CSV e nos relatórios salvos. A relação entre esse nome e o ataque *Replay* deve ser confirmada na documentação da fonte antes de normalizar o rótulo. |
+| **`Reply`** | Rótulo do CSV, mantido sem renomeação nos experimentos e relatórios. |
 | **`Scanning`** | Varredura ativa de portas e serviços abertos nos módulos de comunicação ou sistemas embarcados do drone. |
 | **`Normal`** | Estado de operação padrão, representando o tráfego legítimo, telemetria segura e comandos de voo esperados. |
 
@@ -94,6 +94,22 @@ Os valores a seguir são a melhor acurácia de validação encontrada no tuning,
 | LSTM | 92,87% | 58,79% |
 
 Os parâmetros completos estão em `tuning_bayesiano/`, junto aos resumos `resumo_melhores_hp_binario.json` e `resumo_melhores_hp_multiclasse.json`.
+
+### Comparação com o artigo de referência
+
+Hadi et al., em [“UAV-NIDD: A Dynamic Dataset for Cybersecurity and Intrusion Detection in UAV Networks”](https://doi.org/10.1109/TNSE.2025.3553442), apresentam uma avaliação de modelos de detecção nos cenários UAV (Case 1), ponto de acesso (AP, Case 2) e estação de controle em solo (GCS, Case 3). A conclusão reporta as seguintes acurácias para a FNN:
+
+| Cenário do artigo | Acurácia da FNN |
+| --- | ---: |
+| UAV (Case 1) | 97,28% |
+| Ponto de acesso (AP, Case 2) | 98,69% |
+| Estação de controle em solo (GCS, Case 3) | 99,02% |
+
+Para o cenário UAV, o texto dos resultados reporta 97,18%, enquanto a conclusão informa 97,28%; a tabela reproduz o valor da conclusão.
+
+Nos resultados deste projeto, a maior acurácia binária é 98,77% (CNN) e a maior acurácia multiclasse é 98,31% (GRU). Esses valores são referências de contexto, **não uma comparação direta**: o artigo separa cenários de comunicação e avalia FNN, MLP e MAML em condições próprias; este projeto compara MLP, RNN, CNN, GRU e LSTM em tarefas binária e multiclasse. Os protocolos de divisão, features e métricas também precisam ser equivalentes para concluir que um método supera o outro. O artigo descreve busca em grade aleatória para seus modelos, enquanto este projeto usa Optuna com TPE.
+
+**Referência:** H. J. Hadi, Y. Cao, M. K. Khan, N. Ahmad, Y. Hu e C. Fu, “UAV-NIDD: A Dynamic Dataset for Cybersecurity and Intrusion Detection in UAV Networks,” *IEEE Transactions on Network Science and Engineering*, 2025. [https://doi.org/10.1109/TNSE.2025.3553442](https://doi.org/10.1109/TNSE.2025.3553442).
 
 ### Interpretação e limitações
 

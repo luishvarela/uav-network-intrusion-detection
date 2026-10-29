@@ -34,7 +34,7 @@ Os ataques por gradiente são não direcionados e usam o gradiente da perda do m
 
 ## Resultados
 
-A execução registrada está em `resultados_adversariais/`, que contém sempre os resultados atuais. Ao executar novamente o notebook, as métricas e figuras existentes são substituídas. Os resultados completos, por modelo, tarefa, cenário, ataque e intensidade, estão em [`metricas_ataques.csv`](resultados_adversariais/metricas_ataques.csv) e [`metricas_ataques.json`](resultados_adversariais/metricas_ataques.json). As tabelas e gráficos abaixo são reproduzidos desses arquivos; não representam uma nova execução.
+A execução registrada está em `resultados_adversariais/`, que contém sempre os resultados atuais. Ao executar novamente o notebook, as métricas e figuras existentes são substituídas. Os resultados completos, por modelo, tarefa, cenário, ataque e intensidade, estão em [`metricas_ataques.csv`](resultados_adversariais/metricas_ataques.csv) e [`metricas_ataques.json`](resultados_adversariais/metricas_ataques.json). As tabelas e gráficos abaixo são reproduzidos desses arquivos.
 
 ### Exemplo binário: MLP com dados tratados
 
@@ -65,7 +65,7 @@ Os cenários `original` e `tratado` usam modelos e preparações de dados difere
 
 ## Como reproduzir
 
-O notebook depende do CSV, dos scalers e dos checkpoints gerados por `deep-learning-redes`. Na estrutura atual, ele define os caminhos a partir do diretório de trabalho do kernel. Para que os arquivos de entrada sejam encontrados, abra o notebook com o diretório de trabalho em `deep-learning-redes/`, onde estão `Normal+Attacks.csv`, `modelos_treinados/`, `classificacao_binaria_tratada/` e `classificacao_multiclasse_tratada/`.
+O notebook depende do CSV, dos scalers e dos checkpoints gerados por `deep-learning-redes`. Ele localiza esses arquivos quando executado a partir da pasta `ataques-adversariais/`, da pasta `deep-learning-redes/` ou da raiz deste repositório. Os resultados ficam em `ataques-adversariais/resultados_adversariais/`, e os gráficos em `graficos/`.
 
 Instale as dependências usadas pelo notebook em um ambiente Python com Jupyter:
 
@@ -73,7 +73,7 @@ Instale as dependências usadas pelo notebook em um ambiente Python com Jupyter:
 pip install jupyter numpy pandas scikit-learn torch matplotlib seaborn joblib tqdm
 ```
 
-Depois, abra `ataques_adversariais.ipynb`, confirme que o diretório de trabalho do kernel está em `deep-learning-redes/` e execute as células em ordem. O processamento pode levar tempo, especialmente em CPU. Os resultados gerados substituem os arquivos atuais em `resultados_adversariais/`.
+Depois, abra `ataques_adversariais.ipynb` e execute as células em ordem. O processamento pode levar tempo, especialmente em CPU. Os resultados gerados substituem os arquivos atuais em `resultados_adversariais/`.
 
 ## Métricas e limitações
 
@@ -82,7 +82,6 @@ Depois, abra `ataques_adversariais.ipynb`, confirme que o diretório de trabalho
 - Os valores de `epsilon` são relativos ao espaço padronizado e não têm, por si só, interpretação direta como intensidade de uma alteração em tráfego real.
 - O ruído Gaussiano é repetido três vezes por configuração; essa quantidade limitada não caracteriza toda a variabilidade possível.
 - Esta avaliação não inclui treinamento adversarial nem demonstra robustez em condições operacionais. Os resultados valem para os modelos, dados e parâmetros desta execução.
-- Antes de redistribuir o CSV no GitHub, confira a licença e os termos de uso do dataset na fonte original.
 
 ## Tecnologias
 
