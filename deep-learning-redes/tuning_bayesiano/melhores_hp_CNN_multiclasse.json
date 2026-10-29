@@ -1,0 +1,11 @@
+{
+  "val_accuracy": 0.5910956459671663,
+  "hiperparametros": {
+    "learning_rate": 0.0015122617482576778,
+    "n_blocos_conv": 3,
+    "filtros_0": 16,
+    "filtros_1": 128,
+    "filtros_2": 128,
+    "kernel_size": 3
+  }
+}

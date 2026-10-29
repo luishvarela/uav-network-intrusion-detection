@@ -1,0 +1,56 @@
+{
+  "MLP": {
+    "val_accuracy": 0.5881513204853676,
+    "hiperparametros": {
+      "learning_rate": 0.0005611516415334506,
+      "n_camadas": 3,
+      "unidades_0": 192,
+      "unidades_1": 160,
+      "unidades_2": 64,
+      "dropout_0": 0.0,
+      "dropout_1": 0.0,
+      "dropout_2": 0.5,
+      "ativacao": "tanh"
+    }
+  },
+  "CNN": {
+    "val_accuracy": 0.5910956459671663,
+    "hiperparametros": {
+      "learning_rate": 0.0015122617482576778,
+      "n_blocos_conv": 3,
+      "filtros_0": 16,
+      "filtros_1": 128,
+      "filtros_2": 128,
+      "kernel_size": 3
+    }
+  },
+  "RNN": {
+    "val_accuracy": 0.5878836545324768,
+    "hiperparametros": {
+      "learning_rate": 0.0005611516415334506,
+      "n_camadas": 2,
+      "unidades_0": 96,
+      "unidades_1": 80,
+      "dropout_0": 0.0,
+      "dropout_1": 0.0
+    }
+  },
+  "GRU": {
+    "val_accuracy": 0.5904710920770878,
+    "hiperparametros": {
+      "learning_rate": 0.0035397760889001807,
+      "n_camadas": 1,
+      "unidades_0": 96,
+      "dropout_0": 0.0
+    }
+  },
+  "LSTM": {
+    "val_accuracy": 0.5878836545324768,
+    "hiperparametros": {
+      "learning_rate": 0.0009666262710979731,
+      "n_camadas": 1,
+      "unidades_0": 112,
+      "dropout_0": 0.1
+    }
+  }
+}

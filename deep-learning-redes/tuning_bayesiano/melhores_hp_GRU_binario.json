@@ -1,0 +1,11 @@
+{
+  "val_accuracy": 0.9296038543897216,
+  "hiperparametros": {
+    "learning_rate": 0.0028046012571014854,
+    "n_camadas": 2,
+    "unidades_0": 96,
+    "unidades_1": 48,
+    "dropout_0": 0.4,
+    "dropout_1": 0.30000000000000004
+  }
+}

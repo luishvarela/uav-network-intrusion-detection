@@ -1,0 +1,126 @@
+{
+  "versao": "dados_tratados",
+  "seed": 42,
+  "epocas": 50,
+  "divisao": "StratifiedGroupKFold: fold 1 de 4; grupos por vetor de features",
+  "vetores_de_features_com_rotulos_conflitantes": 23,
+  "overlap_grupos_treino_teste": 0,
+  "linhas_originais": 149434,
+  "duplicatas_removidas_apos_fusao_e_remocao_da_coluna": 113780,
+  "linhas_apos_limpeza": 35654,
+  "coluna_removida": "fwd_seg_size_min",
+  "contagem_classes_original": {
+    "Scanning": 50135,
+    "Reco": 50135,
+    "DDoS": 14292,
+    "DoS": 14121,
+    "Normal": 13444,
+    "Bruteforce": 5103,
+    "MITM": 1164,
+    "Reply": 792,
+    "FakeLanding": 200,
+    "Evil": 48
+  },
+  "contagem_classes_apos_limpeza": {
+    "DDoS": 14292,
+    "DoS": 14121,
+    "Bruteforce": 5097,
+    "Reco+Scanning": 1152,
+    "Normal": 503,
+    "MITM": 208,
+    "Reply": 202,
+    "FakeLanding": 69,
+    "Evil": 10
+  },
+  "contagem_teste": {
+    "DDoS": 3573,
+    "DoS": 3531,
+    "Bruteforce": 1274,
+    "Reco+Scanning": 288,
+    "Normal": 126,
+    "MITM": 52,
+    "Reply": 51,
+    "FakeLanding": 17,
+    "Evil": 2
+  },
+  "classes_modelo": [
+    "Bruteforce",
+    "DDoS",
+    "DoS",
+    "Evil",
+    "FakeLanding",
+    "MITM",
+    "Normal",
+    "Reco+Scanning",
+    "Reply"
+  ],
+  "features": [
+    "flow_duration",
+    "flow_byts_s",
+    "flow_pkts_s",
+    "fwd_pkts_s",
+    "bwd_pkts_s",
+    "tot_fwd_pkts",
+    "tot_bwd_pkts",
+    "totlen_fwd_pkts",
+    "totlen_bwd_pkts",
+    "fwd_pkt_len_max",
+    "fwd_pkt_len_min",
+    "fwd_pkt_len_mean",
+    "fwd_pkt_len_std",
+    "bwd_pkt_len_max",
+    "bwd_pkt_len_min",
+    "bwd_pkt_len_mean",
+    "bwd_pkt_len_std",
+    "pkt_len_max",
+    "pkt_len_min",
+    "pkt_len_mean",
+    "pkt_len_std",
+    "pkt_len_var",
+    "fwd_header_len",
+    "bwd_header_len",
+    "fwd_act_data_pkts",
+    "flow_iat_mean",
+    "flow_iat_max",
+    "flow_iat_min",
+    "flow_iat_std",
+    "fwd_iat_tot",
+    "fwd_iat_max",
+    "fwd_iat_min",
+    "fwd_iat_mean",
+    "fwd_iat_std",
+    "bwd_iat_tot",
+    "bwd_iat_max",
+    "bwd_iat_min",
+    "bwd_iat_mean",
+    "bwd_iat_std",
+    "pkt_size_avg",
+    "fwd_seg_size_avg",
+    "subflow_fwd_pkts",
+    "subflow_fwd_byts"
+  ],
+  "linhas_treino": 26740,
+  "linhas_teste": 8914,
+  "metricas": {
+    "MLP": {
+      "accuracy": 0.9826116221673772,
+      "macro_f1": 0.6441213709093058
+    },
+    "RNN": {
+      "accuracy": 0.9817141575050482,
+      "macro_f1": 0.6102269944713634
+    },
+    "CNN": {
+      "accuracy": 0.9830603544985416,
+      "macro_f1": 0.613650443970126
+    },
+    "GRU": {
+      "accuracy": 0.9830603544985416,
+      "macro_f1": 0.6087864627184519
+    },
+    "LSTM": {
+      "accuracy": 0.9817141575050482,
+      "macro_f1": 0.6233171026425119
+    }
+  }
+}

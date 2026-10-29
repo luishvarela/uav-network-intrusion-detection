@@ -1,0 +1,99 @@
+{
+  "versao": "dados_tratados",
+  "seed": 42,
+  "epocas": 50,
+  "threshold": 0.5,
+  "linhas_originais": 149434,
+  "duplicatas_removidas": 113797,
+  "linhas_apos_limpeza": 35637,
+  "vetores_de_features_com_rotulos_conflitantes": 15,
+  "coluna_removida": "fwd_seg_size_min",
+  "contagem_binaria_apos_limpeza": {
+    "Normal": 503,
+    "Ataque": 35134
+  },
+  "features": [
+    "flow_duration",
+    "flow_byts_s",
+    "flow_pkts_s",
+    "fwd_pkts_s",
+    "bwd_pkts_s",
+    "tot_fwd_pkts",
+    "tot_bwd_pkts",
+    "totlen_fwd_pkts",
+    "totlen_bwd_pkts",
+    "fwd_pkt_len_max",
+    "fwd_pkt_len_min",
+    "fwd_pkt_len_mean",
+    "fwd_pkt_len_std",
+    "bwd_pkt_len_max",
+    "bwd_pkt_len_min",
+    "bwd_pkt_len_mean",
+    "bwd_pkt_len_std",
+    "pkt_len_max",
+    "pkt_len_min",
+    "pkt_len_mean",
+    "pkt_len_std",
+    "pkt_len_var",
+    "fwd_header_len",
+    "bwd_header_len",
+    "fwd_act_data_pkts",
+    "flow_iat_mean",
+    "flow_iat_max",
+    "flow_iat_min",
+    "flow_iat_std",
+    "fwd_iat_tot",
+    "fwd_iat_max",
+    "fwd_iat_min",
+    "fwd_iat_mean",
+    "fwd_iat_std",
+    "bwd_iat_tot",
+    "bwd_iat_max",
+    "bwd_iat_min",
+    "bwd_iat_mean",
+    "bwd_iat_std",
+    "pkt_size_avg",
+    "fwd_seg_size_avg",
+    "subflow_fwd_pkts",
+    "subflow_fwd_byts"
+  ],
+  "linhas_treino": 26726,
+  "linhas_teste": 8911,
+  "metricas": {
+    "MLP": {
+      "accuracy": 0.9842890809112333,
+      "false_positive_rate": 0.12686567164179105,
+      "specificity": 0.8731343283582089,
+      "attack_recall": 0.9859861000341802,
+      "attack_precision": 0.9980394418175528
+    },
+    "RNN": {
+      "accuracy": 0.9856357311188418,
+      "false_positive_rate": 0.8955223880597015,
+      "specificity": 0.1044776119402985,
+      "attack_recall": 0.9990885268314914,
+      "attack_precision": 0.9865001687478907
+    },
+    "CNN": {
+      "accuracy": 0.9863090562226462,
+      "false_positive_rate": 0.4626865671641791,
+      "specificity": 0.5373134328358209,
+      "attack_recall": 0.9931639512361855,
+      "attack_precision": 0.9929376922200707
+    },
+    "GRU": {
+      "accuracy": 0.9856357311188418,
+      "false_positive_rate": 0.9552238805970149,
+      "specificity": 0.04477611940298507,
+      "attack_recall": 1.0,
+      "attack_precision": 0.9856260527793375
+    },
+    "LSTM": {
+      "accuracy": 0.9856357311188418,
+      "false_positive_rate": 0.9552238805970149,
+      "specificity": 0.04477611940298507,
+      "attack_recall": 1.0,
+      "attack_precision": 0.9856260527793375
+    }
+  }
+}
