@@ -1,0 +1,10 @@
+jupyterlab
+numpy
+pandas
+scikit-learn
+torch
+matplotlib
+seaborn
+joblib
+tqdm
+optuna

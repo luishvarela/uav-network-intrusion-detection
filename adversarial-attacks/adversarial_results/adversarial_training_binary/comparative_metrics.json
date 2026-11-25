@@ -1,0 +1,211 @@
+{
+  "configuration": {
+    "dataset": "Normal+Attacks.csv",
+    "scenario": "binary_cleaned",
+    "seed": 42,
+    "training_samples": 26726,
+    "test_samples": 8911,
+    "normal_test_samples": 134,
+    "attack_test_samples": 8777,
+    "model": "MLP",
+    "training_and_test_attack": "Untargeted FGSM",
+    "epsilon": 0.05,
+    "epsilon_unit": "feature padronizada (StandardScaler)",
+    "epochs": 50,
+    "batch_size": 256,
+    "peso_adversarial": 0.5,
+    "limiar": 0.5,
+    "device": "cuda"
+  },
+  "metrics": {
+    "NoAdv_clean_test": {
+      "accuracy": 0.9842890809112333,
+      "macro_f1": 0.8088223034618374,
+      "specificity": 0.8731343283582089,
+      "attack_recall": 0.9859861000341802,
+      "attack_precision": 0.9980394418175528,
+      "confusion_matrix": [
+        [
+          117,
+          17
+        ],
+        [
+          123,
+          8654
+        ]
+      ],
+      "classification_report": {
+        "Normal": {
+          "precision": 0.4875,
+          "recall": 0.8731343283582089,
+          "f1-score": 0.6256684491978609,
+          "support": 134.0
+        },
+        "Attack": {
+          "precision": 0.9980394418175528,
+          "recall": 0.9859861000341802,
+          "f1-score": 0.9919761577258138,
+          "support": 8777.0
+        },
+        "accuracy": 0.9842890809112333,
+        "macro avg": {
+          "precision": 0.7427697209087764,
+          "recall": 0.9295602141961945,
+          "f1-score": 0.8088223034618374,
+          "support": 8911.0
+        },
+        "weighted avg": {
+          "precision": 0.9903621569781912,
+          "recall": 0.9842890809112333,
+          "f1-score": 0.9864677711314085,
+          "support": 8911.0
+        }
+      },
+      "attack_success_rate": null
+    },
+    "NoAdv_FGSM_test": {
+      "accuracy": 0.9802491302884075,
+      "macro_f1": 0.7532010892075046,
+      "specificity": 0.7014925373134329,
+      "attack_recall": 0.9845049561353537,
+      "attack_precision": 0.995392235917521,
+      "confusion_matrix": [
+        [
+          94,
+          40
+        ],
+        [
+          136,
+          8641
+        ]
+      ],
+      "classification_report": {
+        "Normal": {
+          "precision": 0.40869565217391307,
+          "recall": 0.7014925373134329,
+          "f1-score": 0.5164835164835165,
+          "support": 134.0
+        },
+        "Attack": {
+          "precision": 0.995392235917521,
+          "recall": 0.9845049561353537,
+          "f1-score": 0.9899186619314927,
+          "support": 8777.0
+        },
+        "accuracy": 0.9802491302884075,
+        "macro avg": {
+          "precision": 0.702043944045717,
+          "recall": 0.8429987467243933,
+          "f1-score": 0.7532010892075046,
+          "support": 8911.0
+        },
+        "weighted avg": {
+          "precision": 0.9865697308988203,
+          "recall": 0.9802491302884075,
+          "f1-score": 0.9827993364360345,
+          "support": 8911.0
+        }
+      },
+      "attack_success_rate": 0.004104435070117433,
+      "attack_success_definition": "Fraction of clean-correct test samples misclassified after FGSM."
+    },
+    "AdvTrain_clean_test": {
+      "accuracy": 0.9847379643137695,
+      "macro_f1": 0.8217401536814111,
+      "specificity": 0.9477611940298507,
+      "attack_recall": 0.9853024951577988,
+      "attack_precision": 0.9991912189485846,
+      "confusion_matrix": [
+        [
+          127,
+          7
+        ],
+        [
+          129,
+          8648
+        ]
+      ],
+      "classification_report": {
+        "Normal": {
+          "precision": 0.49609375,
+          "recall": 0.9477611940298507,
+          "f1-score": 0.6512820512820513,
+          "support": 134.0
+        },
+        "Attack": {
+          "precision": 0.9991912189485846,
+          "recall": 0.9853024951577988,
+          "f1-score": 0.992198256080771,
+          "support": 8777.0
+        },
+        "accuracy": 0.9847379643137695,
+        "macro avg": {
+          "precision": 0.7476424844742924,
+          "recall": 0.9665318445938247,
+          "f1-score": 0.8217401536814111,
+          "support": 8911.0
+        },
+        "weighted avg": {
+          "precision": 0.9916258434756735,
+          "recall": 0.9847379643137695,
+          "f1-score": 0.9870716966101135,
+          "support": 8911.0
+        }
+      },
+      "attack_success_rate": null
+    },
+    "AdvTrain_FGSM_test": {
+      "accuracy": 0.9823813264504545,
+      "macro_f1": 0.789462365882666,
+      "specificity": 0.835820895522388,
+      "attack_recall": 0.9846188902814174,
+      "attack_precision": 0.997460757156048,
+      "confusion_matrix": [
+        [
+          112,
+          22
+        ],
+        [
+          135,
+          8642
+        ]
+      ],
+      "classification_report": {
+        "Normal": {
+          "precision": 0.4534412955465587,
+          "recall": 0.835820895522388,
+          "f1-score": 0.5879265091863517,
+          "support": 134.0
+        },
+        "Attack": {
+          "precision": 0.997460757156048,
+          "recall": 0.9846188902814174,
+          "f1-score": 0.9909982225789805,
+          "support": 8777.0
+        },
+        "accuracy": 0.9823813264504545,
+        "macro avg": {
+          "precision": 0.7254510263513033,
+          "recall": 0.9102198929019027,
+          "f1-score": 0.789462365882666,
+          "support": 8911.0
+        },
+        "weighted avg": {
+          "precision": 0.9892800133724466,
+          "recall": 0.9823813264504545,
+          "f1-score": 0.9849369938061591,
+          "support": 8911.0
+        }
+      },
+      "attack_success_rate": 0.002393162393162393,
+      "attack_success_definition": "Fraction of clean-correct test samples misclassified after FGSM."
+    }
+  },
+  "relative_accuracy_recovery": 0.5277777777777801,
+  "recovery_interpretation": "(accuracy AdvTrain sob FGSM - accuracy NoAdv sob FGSM) / (clean NoAdv accuracy - NoAdv accuracy under FGSM); null if there is no accuracy drop.",
+  "cost": {
+    "adversarial_training_seconds": 27.208104053999705,
+    "fgsm_generation_during_training_seconds": 5.705528749987934,
+    "note": "NoAdv training time was not measured for the existing checkpoint; estimating relative training overhead requires measuring both on the same device."
+  }
+}

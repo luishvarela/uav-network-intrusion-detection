@@ -1,0 +1,226 @@
+{
+  "configuration": {
+    "dataset": "Normal+Attacks.csv",
+    "scenario": "binary_cleaned",
+    "algorithm": "SCAFFOLD",
+    "fedprox_mu": null,
+    "local_adversarial_training": true,
+    "seed": 42,
+    "clients": 5,
+    "rounds": 10,
+    "local_epochs": 5,
+    "batch_size": 256,
+    "epsilon": 0.05,
+    "adversarial_weight": 0.5
+  },
+  "metrics": {
+    "NoAdv_clean_test": {
+      "accuracy": 0.9842890809112333,
+      "macro_f1": 0.8088223034618374,
+      "specificity": 0.8731343283582089,
+      "attack_recall": 0.9859861000341802,
+      "attack_precision": 0.9980394418175528,
+      "confusion_matrix": [
+        [
+          117,
+          17
+        ],
+        [
+          123,
+          8654
+        ]
+      ],
+      "classification_report": {
+        "Normal": {
+          "precision": 0.4875,
+          "recall": 0.8731343283582089,
+          "f1-score": 0.6256684491978609,
+          "support": 134.0
+        },
+        "Attack": {
+          "precision": 0.9980394418175528,
+          "recall": 0.9859861000341802,
+          "f1-score": 0.9919761577258138,
+          "support": 8777.0
+        },
+        "accuracy": 0.9842890809112333,
+        "macro avg": {
+          "precision": 0.7427697209087764,
+          "recall": 0.9295602141961945,
+          "f1-score": 0.8088223034618374,
+          "support": 8911.0
+        },
+        "weighted avg": {
+          "precision": 0.9903621569781912,
+          "recall": 0.9842890809112333,
+          "f1-score": 0.9864677711314085,
+          "support": 8911.0
+        }
+      },
+      "attack_success_rate": null
+    },
+    "SCAFFOLD_FGSM_clean_test": {
+      "accuracy": 0.9516328133767255,
+      "macro_f1": 0.6700507736318692,
+      "specificity": 0.9253731343283582,
+      "attack_recall": 0.9520337245072348,
+      "attack_precision": 0.9988046856323213,
+      "confusion_matrix": [
+        [
+          124,
+          10
+        ],
+        [
+          421,
+          8356
+        ]
+      ],
+      "classification_report": {
+        "Normal": {
+          "precision": 0.22752293577981653,
+          "recall": 0.9253731343283582,
+          "f1-score": 0.36524300441826213,
+          "support": 134.0
+        },
+        "Attack": {
+          "precision": 0.9988046856323213,
+          "recall": 0.9520337245072348,
+          "f1-score": 0.9748585428454762,
+          "support": 8777.0
+        },
+        "accuracy": 0.9516328133767255,
+        "macro avg": {
+          "precision": 0.6131638107060688,
+          "recall": 0.9387034294177965,
+          "f1-score": 0.6700507736318692,
+          "support": 8911.0
+        },
+        "weighted avg": {
+          "precision": 0.987206463830028,
+          "recall": 0.9516328133767255,
+          "f1-score": 0.9656913918916835,
+          "support": 8911.0
+        }
+      },
+      "attack_success_rate": null
+    },
+    "SCAFFOLD_FGSM_FGSM_test": {
+      "accuracy": 0.9503983840197509,
+      "macro_f1": 0.6668103083643795,
+      "specificity": 0.9253731343283582,
+      "attack_recall": 0.9507804489005355,
+      "attack_precision": 0.9988031119090365,
+      "confusion_matrix": [
+        [
+          124,
+          10
+        ],
+        [
+          432,
+          8345
+        ]
+      ],
+      "classification_report": {
+        "Normal": {
+          "precision": 0.22302158273381295,
+          "recall": 0.9253731343283582,
+          "f1-score": 0.35942028985507246,
+          "support": 134.0
+        },
+        "Attack": {
+          "precision": 0.9988031119090365,
+          "recall": 0.9507804489005355,
+          "f1-score": 0.9742003268736866,
+          "support": 8777.0
+        },
+        "accuracy": 0.9503983840197509,
+        "macro avg": {
+          "precision": 0.6109123473214247,
+          "recall": 0.9380767916144468,
+          "f1-score": 0.6668103083643795,
+          "support": 8911.0
+        },
+        "weighted avg": {
+          "precision": 0.9871372242522662,
+          "recall": 0.9503983840197509,
+          "f1-score": 0.9649555142869405,
+          "support": 8911.0
+        }
+      },
+      "attack_success_rate": 0.0012971698113207546,
+      "attack_success_definition": "Fraction of clean-correct test samples misclassified after FGSM."
+    }
+  },
+  "relative_accuracy_recovery": -7.3888888888887285,
+  "relative_macro_f1_recovery": -1.553198397433323,
+  "cost": {
+    "federated_training_wall_time_seconds": 12.45315388400013,
+    "sum_local_training_time_seconds": 12.340391152998563,
+    "fgsm_generation_time_seconds": 2.399965281995719,
+    "model_payload_bytes": 198788,
+    "scaffold_control_payload_bytes": 198788,
+    "estimated_total_bytes": 39757600
+  },
+  "round_history": [
+    {
+      "round": 1,
+      "participating_clients": 5,
+      "examples_aggregated": 26726,
+      "fgsm_generation_seconds": 0.250731037996502
+    },
+    {
+      "round": 2,
+      "participating_clients": 5,
+      "examples_aggregated": 26726,
+      "fgsm_generation_seconds": 0.2345563239960029
+    },
+    {
+      "round": 3,
+      "participating_clients": 5,
+      "examples_aggregated": 26726,
+      "fgsm_generation_seconds": 0.24381664800785074
+    },
+    {
+      "round": 4,
+      "participating_clients": 5,
+      "examples_aggregated": 26726,
+      "fgsm_generation_seconds": 0.25181315199915844
+    },
+    {
+      "round": 5,
+      "participating_clients": 5,
+      "examples_aggregated": 26726,
+      "fgsm_generation_seconds": 0.2407310099993083
+    },
+    {
+      "round": 6,
+      "participating_clients": 5,
+      "examples_aggregated": 26726,
+      "fgsm_generation_seconds": 0.22586261100059346
+    },
+    {
+      "round": 7,
+      "participating_clients": 5,
+      "examples_aggregated": 26726,
+      "fgsm_generation_seconds": 0.23253978899629146
+    },
+    {
+      "round": 8,
+      "participating_clients": 5,
+      "examples_aggregated": 26726,
+      "fgsm_generation_seconds": 0.21662900999672274
+    },
+    {
+      "round": 9,
+      "participating_clients": 5,
+      "examples_aggregated": 26726,
+      "fgsm_generation_seconds": 0.2306317009979466
+    },
+    {
+      "round": 10,
+      "participating_clients": 5,
+      "examples_aggregated": 26726,
+      "fgsm_generation_seconds": 0.2726539990053425
+    }
+  ]
+}
